@@ -1,12 +1,24 @@
+// import json
+// import xmljson
+// from lxml.etree import parse
+//
+//
+// tree = parse('https://www.lancers.jp/magazine/feed/')
+//
+// root = tree.getroot()
+//
+//
+// with open('sample.json', 'w') as fw:
+//     json.dump(xmljson.yahoo.data(root), fw, indent=2)
+
 $.ajax({
-        //はてなrssファイルを読み込む
-        //ブログのアドレスの最後にrssをつける
-     url:'https://www.lancers.jp/magazine/feed',
+        //XML形式だったのでうまく行かない。
+     url:'https://www.lancers.jp/magazine/feed/',
 
      success: function(data){
 
                     //はてなrssの読み込み
-                    var rss_url = 'http://noriyasu-katano.hatenablog.com/rss';
+                    var rss_url = 'https://www.lancers.jp/magazine/feed/';
                     var htmlstr = "";
                     htmlstr += '<div class="recomend">';
                     htmlstr += '<h2>関連記事</h2>';

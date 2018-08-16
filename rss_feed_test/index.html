@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
+<ul id="feed"></ul>
+
+<hr>
+
+
 
     <footer>
     </footer>
@@ -13,8 +18,28 @@
     src="https://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
     crossorigin="anonymous"></script>
-    <script type="text/javascript" src="rss.js">
-
-    </script>
+    <script type="text/javascript" src="rss_lanc.js"></script>
+    <!-- <script src="js/jquery-1.X.X.min.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+    google.load("feeds", "1");
+    function initialize() {
+    	var feedurl = "https://www.lancers.jp/magazine/feed/";
+    	var feed = new google.feeds.Feed(feedurl);
+    	feed.setNumEntries(10);
+    	feed.load(function (result){
+    		if (!result.error){
+    			for (var i = 0; i < result.feed.entries.length; i++) {
+    				var entry = result.feed.entries[i];
+    				var title = '<li><h3><a href="' + entry.link + '">' + entry.title + '</a></h3></li>';
+    				var conte = '<li>' + entry.contentSnippet + '</li>';
+    				var dates = '<li>' + entry.publishedDate + '</li>';
+    				$('#feed').append('<li class="post"><ul>' + title + conte + dates + '</ul></li>');
+    			}
+    		}
+    	});
+    }
+    google.setOnLoadCallback(initialize);
+    </script> -->
   </body>
 </html>
