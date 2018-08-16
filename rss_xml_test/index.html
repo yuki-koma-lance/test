@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Test</h1>
+    <div id="sample">
+      <ul></ul>
+    </div>
+
+    <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+    $(function(){
+        $.ajax({
+            url:'sample.xml',
+            type:'GET',
+            dataType:'xml',
+            timeout:1000,
+            error:function() {
+                alert("ロード失敗");
+            },
+            success:function(xml){
+                $(xml).find("sample").each(function() {
+                    $("#sample ul").append('<li><a href="' + $(this).find('url').text() +  '" target="_blank">' + $(this).find('title').text() + '</a></li>');
+                });
+            }
+        });
+      });
+
+    </script>
+  </body>
+</html>
